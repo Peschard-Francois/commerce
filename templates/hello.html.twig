@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{#<h1>Bonjour {{ nom }}</h1>#}
+
+    {% include '_formateur.html.twig' with {"formateur" : formateur}%}
+    {% include '_formateur.html.twig' with {"formateur" : formateur2}%}
+
+    {% set formateur = formateur2 %}
+    {% include '_formateur.html.twig' %}
+
+{% endblock %}
+
+{% block title %}
+    {{ nom }}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Bonjour {{ nom }}</h1>#}
+
+{#    <p>Mon formateur s'apelle {{ formateur.nom }} {{ formateur.prenom }} et il a {{ formateur.age }}</p>#}
+
+
+
+
+
+
+        {#<ul>
+            {% for age in ages %}
+               <li>
+                   {% if age >= 18 %}
+                       Vous etes un adulte
+                   {% else %}
+                       Vous etes un enfant
+                   {% endif %}
+               </li>
+            {% endfor %}
+        </ul>#}
+
+
+
+
+
+
+
+
+
+
+        {#{% if age >= 18 %}
+            Vous etes un adulte
+        {% else %}
+            Vous etes un enfant
+        {% endif %}
+
+        <p>Vous avez {{ age }}</p>
+
+        <ul>
+            {% for i in 1..10 %}
+                <li>Numero : {{ i }}</li>
+            {%  endfor %}
+        </ul>
+
+        <ul>
+            {% for personne in prenoms %}
+                <li>{{ personne | upper }}</li>
+            {% endfor %}
+        </ul>#}
+{#
+
+</body>
+</html>#}
