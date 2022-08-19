@@ -41,7 +41,11 @@ class HomeController extends AbstractController {
        /* $em->flush(); // Afficher les données
 
         dd($product);*/
-        return $this->render('home.html.twig');
+        $products = $productRepository->findBy([],[],3);
+
+        return $this->render('home.html.twig',[
+            'products' => $products
+            ]);
     }
 
 }

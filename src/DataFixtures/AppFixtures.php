@@ -26,6 +26,9 @@ class AppFixtures extends Fixture
         $faker = Factory::create('fr_FR');
         $faker->addProvider(new \Liior\Faker\Prices($faker));
         $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
+        $faker->addProvider(new \Bluemmb\Faker\PicsumPhotosProvider($faker));
+
+
 
 
         // CREATION DE FAUX PRODUIT DANS LA BASE DE DONNEES
@@ -49,7 +52,11 @@ class AppFixtures extends Fixture
                     $product->setName($faker->productName)
                         ->setPrice($faker->price(4000,20000))
                         ->setSlug(strtolower($this->sluggers->slug($product->getName())))
-                        ->setCategory($category);
+                        ->setCategory($category)
+                        ->setShortDescription($faker->paragraph())
+                        ->setMainPircture($faker->imageUrl(400,400, true));
+
+
                     $manager->persist($product);
             }
         }
